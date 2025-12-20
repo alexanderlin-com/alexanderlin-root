@@ -5,16 +5,16 @@ import { motion } from "framer-motion";
 // 1. This is your "Projects Array" - Add your real projects here later!
 const projects = [
   {
-    title: "Project Alpha",
-    description: "A sophisticated web application built to streamline workflow and improve user engagement through intuitive design.",
-    tags: ["React", "TypeScript", "Tailwind"],
+    title: "RAG Engine Cashflow",
+    description: "An AI-powered system designed to process financial data and provide intelligent insights using Retrieval-Augmented Generation.",
+    tags: ["Python", "LangChain", "FastAPI", "Pinecone"],
     link: "https://github.com/alexanderlin-com/rag-engine-cashflow"
   },
   {
-    title: "Project Beta",
-    description: "Developed a high-performance data engine that processes real-time metrics with a focus on speed and reliability.",
-    tags: ["Vite", "Framer Motion", "Firebase"],
-    link: "#"
+    title: "alexanderlin.com",
+    description: "My personal engineering portfolio built with a focus on performance, clean architecture, and subtle user interactions.",
+    tags: ["React", "TypeScript", "Tailwind CSS", "Framer Motion"],
+    link: "https://github.com/alexanderlin-com/alexanderlin-root"
   }
 ];
 
@@ -76,7 +76,7 @@ export default function Home() {
             Software Engineer
           </p>
           <p className="font-sans text-slate-600 leading-relaxed text-lg">
-            Building reliable internal systems and automation-focused tools, with an emphasis on  <span className="text-slate-900 font-medium">AI-backed workflows</span>.
+            I design and deploy RAG architectures, tailored LLM agents, and automation systems that plug into operational workflows.
           </p>
           <p className="font-sans text-slate-600 leading-relaxed text-lg">  Currently open to full-time engineering roles.</p>
         </div>
@@ -152,28 +152,36 @@ export default function Home() {
           ))}
 
 
-          {/* CONTACT SECTION */}
-          <section id="contact" className="scroll-mt-24 py-32 border-t border-slate-100 w-full flex flex-col items-center">
-            <motion.div 
-              initial={{ opacity: 0 }}
-              whileInView={{ opacity: 1 }}
-              className="text-center space-y-6"
-            >
-              <h2 className="font-serif text-4xl font-semibold text-slate-900">
-                Let's build something together.
-              </h2>
-              <p className="text-slate-600 max-w-md mx-auto">
-                I’m always looking for interesting projects and clever people to collaborate with. 
-                Drop me a line and let's see if we're a good fit.
-              </p>
+
+        {/* CONTACT SECTION */}
+        <section id="contact" className="scroll-mt-24 py-32 border-t border-slate-100 w-full flex flex-col items-center">
+          <motion.div 
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            transition={{ duration: 0.8 }}
+            className="text-center space-y-4"
+          >
+            <h2 className="font-serif text-3xl font-medium text-slate-900">
+              Let's start a conversation
+            </h2>
+            <p className="text-slate-500 max-w-sm mx-auto leading-relaxed">
+              I’m currently exploring new opportunities where I can contribute to 
+              <span className="text-slate-900 font-medium"> impactful systems. </span> 
+              If you're looking for a fresh perspective, I'd love to connect.
+            </p>
+            <div className="pt-4">
               <a 
                 href="https://www.linkedin.com/in/alexanderlin-com/" 
-                className="inline-block px-8 py-4 bg-indigo-600 text-white rounded-full font-medium hover:bg-indigo-700 hover:shadow-lg transition-all"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-block px-8 py-3 bg-slate-900 text-white rounded-xl font-medium hover:bg-slate-800 transition-all shadow-sm"
               >
-                Get In Touch
+                Connect on LinkedIn
               </a>
-            </motion.div>
-          </section>
+            </div>
+          </motion.div>
+        </section>
+
         </section>
       </div>
     </PageLayout>
