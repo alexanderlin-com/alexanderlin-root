@@ -6,7 +6,7 @@ import { motion } from "framer-motion";
 const projects = [
   {
     title: "RAG Engine Cashflow",
-    description: "An AI-powered system designed to process financial data and provide intelligent insights using Retrieval-Augmented Generation.",
+    description: "An AI-powered system designed to process financial data and provide intelligent insights using Retrieval-Augmented Generation (RAG).",
     tags: ["Python", "LangChain", "FastAPI", "Pinecone"],
     link: "https://github.com/alexanderlin-com/rag-engine-cashflow"
   },
