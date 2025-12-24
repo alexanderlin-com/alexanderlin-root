@@ -5,7 +5,7 @@ import { motion } from "framer-motion";
 // 1. This is your "Projects Array" - Add your real projects here later!
 const projects = [
   {
-    title: "RAG Engine Cashflow",
+    title: "Cashflwo Depot Assistant",
     description: "An AI-powered system designed to process financial data and provide intelligent insights using Retrieval-Augmented Generation (RAG).",
     tags: ["Python", "LangChain", "FastAPI", "Pinecone"],
     link: "https://cashflow.alexanderlin.com"
