@@ -5,16 +5,16 @@ import { motion } from "framer-motion";
 // 1. This is your "Projects Array" - Add your real projects here later!
 const projects = [
   {
-    title: "Cashflwo Depot Assistant",
+    title: "Cashflow Depot Assistant",
     description: "An AI-powered system designed to process financial data and provide intelligent insights using Retrieval-Augmented Generation (RAG).",
     tags: ["Python", "LangChain", "FastAPI", "Pinecone"],
-    link: "https://cashflow.alexanderlin.com"
+    link: "https://frontend-app-290079475858.us-central1.run.app"
   },
   {
-    title: "alexanderlin.com",
-    description: "My personal engineering portfolio built with a focus on performance, clean architecture, and subtle user interactions.",
-    tags: ["React", "TypeScript", "Tailwind CSS", "Framer Motion"],
-    link: "https://github.com/alexanderlin-com/alexanderlin-root"
+    title: "Alexander Lin RAG",
+    description: "An AI-powered RAG system trained on information about me. Ask it anything!",
+    tags: ["Python", "Langchain", "Streamlit"],
+    link: "https://alexanderlin-rag.streamlit.app/"
   }
 ];
 
