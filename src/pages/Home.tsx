@@ -8,7 +8,7 @@ const projects = [
     title: "Cashflow Depot Assistant",
     description: "An AI-powered system designed to process financial data and provide intelligent insights using Retrieval-Augmented Generation (RAG).",
     tags: ["Python", "LangChain", "FastAPI", "Pinecone"],
-    link: "https://frontend-app-290079475858.us-central1.run.app"
+    link: "https://cashflow.alexanderlin.com"
   },
   {
     title: "Alexander Lin RAG",
