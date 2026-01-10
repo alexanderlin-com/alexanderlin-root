@@ -12,7 +12,7 @@ const projects = [
   },
   {
     title: "Alexander Lin RAG",
-    description: "An AI-powered RAG system trained on information about me. Ask it anything!",
+    description: "An AI-powered RAG system trained on information about me. Ask it anything! I am still actively working on this project, so expect improvements to come in the future!",
     tags: ["Python", "Langchain", "Streamlit"],
     link: "https://alexanderlin-rag.streamlit.app/"
   }
