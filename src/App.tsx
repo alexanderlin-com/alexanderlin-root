@@ -1,5 +1,10 @@
-import Home from "./pages/Home";
+import AppRouter from "./components/AppRouter";
+import PageLayout from "./components/layout/PageLayout";
 
 export default function App() {
-  return <Home />;
+  return (
+    <PageLayout>
+      <AppRouter />
+    </PageLayout>
+  );
 }

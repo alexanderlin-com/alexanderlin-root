@@ -1,189 +1,110 @@
-import PageLayout from "../components/layout/PageLayout";
-import ProjectCard from "../components/ProjectCard"; // Make sure you created this file!
 import { motion } from "framer-motion";
-
-// 1. This is your "Projects Array" - Add your real projects here later!
-const projects = [
-  {
-    title: "Cashflow Depot Assistant",
-    description: "An AI-powered system designed to process financial data and provide intelligent insights using Retrieval-Augmented Generation (RAG).",
-    tags: ["Python", "LangChain", "FastAPI", "Pinecone"],
-    link: "https://cashflow.alexanderlin.com"
-  },
-  {
-    title: "Alexander Lin RAG",
-    description: "An AI-powered RAG system trained on information about me. Ask it anything! I am still actively working on this project, so expect improvements to come in the future!",
-    tags: ["Python", "Langchain", "Streamlit"],
-    link: "https://alexanderlin-rag.streamlit.app/"
-  }
-];
-
-
+import { Link } from "react-router-dom";
 
 export default function Home() {
   return (
-    <PageLayout>
-      <div className="max-w-6xl mx-auto px-4">
-      {/* Updated Hero Section in Home.tsx */}
-      <motion.main
-        className="relative min-h-screen w-full flex items-center justify-center bg-white"
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ duration: 1 }}
-      >
-        {/* Left Image - Full rounded corners, fixed to the screen edge */}
-        <div className="absolute left-4 top-1/2 -translate-y-1/2 w-[40%] h-[85%] hidden xl:block z-0"> {/* size edit*/}
-          <motion.img 
-            initial={{ opacity: 0, x: -20 }}
-            whileInView={{ opacity: 0.25 }}
-            whileHover={{ opacity: 1, scale: 1.02 }}
-            src="/kyoto-pic.jpg" 
-            alt="Pic of me heh." 
-            className="w-full h-full object-cover rounded-[2rem] shadow-2xl border border-slate-100 transition-all duration-700 cursor-pointer"
-          />
-        </div>
+    <motion.div
+      initial={{ opacity: 0, y: 15 }}
+      animate={{ opacity: 1, y: 0 }}
+      exit={{ opacity: 0, y: -15 }}
+      transition={{ duration: 0.5, ease: "easeInOut" }}
+      className="relative min-h-[90vh] w-full flex items-center justify-center px-4 sm:px-6 py-12 lg:py-20 z-10"
+    >
 
-        {/* Right Image - The Technical Edge */}
-        <div className="absolute right-4 top-1/2 -translate-y-1/2 w-[40%] h-[85%] hidden xl:block z-0">
-          <motion.div 
-            initial={{ opacity: 0, x: 20 }}
-            whileInView={{ opacity: 0.25 }}
-            whileHover={{ opacity: 1, scale: 1.02 }}
-            className="w-full h-full bg-[#1e1e1e] rounded-[2rem] shadow-2xl border border-slate-800 overflow-hidden transition-all duration-700 cursor-pointer"
+      <div className="w-full max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-8 items-center">
+
+        {/* LEFT COLUMN: Typography & CTAs */}
+        <div className="flex flex-col items-center lg:items-start text-center lg:text-left order-2 lg:order-1 relative z-20">
+
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, ease: "easeOut" }}
           >
-            <div className="p-4 bg-slate-800/50 flex gap-2 border-b border-white/5">
-              <div className="w-3 h-3 rounded-full bg-red-500/50"></div>
-              <div className="w-3 h-3 rounded-full bg-yellow-500/50"></div>
-              <div className="w-3 h-3 rounded-full bg-green-500/50"></div>
-            </div>
-            <img 
-              src="/setup.jpg" 
-              alt="Fedora Asahi Fastfetch." 
-              className="w-full h-full object-cover opacity-80"
-            />
+            <h1 className="font-sans text-6xl sm:text-7xl md:text-8xl lg:text-[6.5rem] font-bold tracking-tight text-slate-900 mb-4 leading-[1.05]">
+              Alexander Lin
+            </h1>
           </motion.div>
-        </div>
 
-        {/* Center Content stays sharp and readable */}
-        <div className="relative z-10 text-center px-6 max-w-2xl">
-          <span className="mb-6 inline-block px-4 py-1 text-xs font-bold tracking-[0.3em] uppercase text-indigo-600 bg-indigo-50/50 rounded-full">
-            Engineering with Clarity
-          </span>
-          <h1 className="font-serif text-6xl md:text-8xl font-medium text-slate-900 mb-4 tracking-tight">
-            Alexander Lin
-          </h1>
-          <p className="font-sans text-xl md:text-2xl text-slate-500 mb-8 italic font-light">
-            Software Engineer
-          </p>
-          <p className="font-sans text-slate-600 leading-relaxed text-lg">
-            I design and deploy RAG architectures, tailored LLM agents, and automation systems that plug into operational workflows.
-          </p>
-          <p className="font-sans text-slate-600 leading-relaxed text-lg">  Currently open to full-time engineering roles.</p>
-        </div>
-      </motion.main>
-
-
-        {/* ABOUT & SKILLS SECTION */}
-        <section id="about" className="scroll-mt-24 py-24 max-w-6xl mx-auto px-6 grid lg:grid-cols-5 gap-12 items-start">
-          
-          {/* The Narrative - Left Side */}
-          <div className="lg:col-span-2 space-y-6">
-            <h2 className="font-serif text-3xl font-semibold text-slate-900">Engineering with Purpose</h2>
-            <p className="text-slate-600 leading-relaxed text-lg">
-              I'm a Software Engineer, recently graduated from <span className="text-slate-900 font-medium">Cal Poly Pomona</span> this December. 
-              My internships at <span className="text-indigo-600 font-medium text-lg italic">Caltech</span> focused on automating complex enterprise systems and building AI-driven solutions to save time and reduce human error.
-            </p>
-            <p className="text-slate-600 leading-relaxed">
-              Whether I'm debugging high-traffic registration systems or deploying AI knowledge searches, I prioritize <span className="text-slate-900 font-medium">clarity, reliability, and scale.</span>
-            </p>
-          </div>
-
-          {/* The Skills - Right Side (Categorized for Competence) */}
-          <div className="lg:col-span-3 grid sm:grid-cols-2 gap-6">
-            <div className="space-y-4">
-              <h3 className="text-xs font-bold uppercase tracking-widest text-slate-400">Core Languages</h3>
-              <div className="flex flex-wrap gap-2">
-                {["Python", "Java", "C++", "TypeScript", "SQL", "Bash"].map((s) => (
-                  <span key={s} className="px-3 py-1.5 bg-white border border-slate-200 text-slate-700 text-sm font-medium rounded-md shadow-sm">{s}</span>
-                ))}
-              </div>
-              
-              <h3 className="text-xs font-bold uppercase tracking-widest text-slate-400 pt-4">AI & Frameworks</h3>
-              <div className="flex flex-wrap gap-2">
-                {["LangChain", "FastAPI", "Next.js", "SvelteKit", "Tailwind"].map((s) => (
-                  <span key={s} className="px-3 py-1.5 bg-indigo-50 border border-indigo-100 text-indigo-700 text-sm font-medium rounded-md shadow-sm">{s}</span>
-                ))}
-              </div>
-            </div>
-
-            <div className="space-y-4">
-              <h3 className="text-xs font-bold uppercase tracking-widest text-slate-400">Infrastructure & Cloud</h3>
-              <div className="flex flex-wrap gap-2">
-                {["Docker", "Terraform", "GCP", "GitHub Actions", "Vercel"].map((s) => (
-                  <span key={s} className="px-3 py-1.5 bg-slate-900 text-slate-100 text-sm font-medium rounded-md shadow-sm">{s}</span>
-                ))}
-              </div>
-
-              <h3 className="text-xs font-bold uppercase tracking-widest text-slate-400 pt-4">Enterprise & Data</h3>
-              <div className="flex flex-wrap gap-2">
-                {["Pinecone", "Oracle EBS", "Microsoft Graph", "SharePoint"].map((s) => (
-                  <span key={s} className="px-3 py-1.5 bg-white border border-slate-200 text-slate-700 text-sm font-medium rounded-md shadow-sm">{s}</span>
-                ))}
-              </div>
-            </div>
-          </div>
-        </section>
-
-        {/* PROJECTS SECTION */}
-        <section id="projects" className="scroll-mt-24 pb-32 flex flex-col items-center gap-12">
-          <h2 className="font-serif text-3xl font-semibold text-slate-900 mb-4">
-            Featured Projects
-          </h2>
-          
-          {/* This is the magic loop we talked about! */}
-          {projects.map((project, index) => (
-            <ProjectCard 
-              key={index} 
-              title={project.title} 
-              description={project.description} 
-              tags={project.tags} 
-              link={project.link} 
-            />
-          ))}
-
-
-
-        {/* CONTACT SECTION */}
-        <section id="contact" className="scroll-mt-24 py-32 border-t border-slate-100 w-full flex flex-col items-center">
-          <motion.div 
-            initial={{ opacity: 0 }}
-            whileInView={{ opacity: 1 }}
-            transition={{ duration: 0.8 }}
-            className="text-center space-y-4"
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.1, duration: 0.8, ease: "easeOut" }}
+            className="mb-8"
           >
-            <h2 className="font-serif text-3xl font-medium text-slate-900">
-              Let's start a conversation
+            <h2 className="text-2xl sm:text-3xl lg:text-4xl text-transparent bg-clip-text bg-gradient-to-r from-indigo-600 to-sky-500 font-medium tracking-tight">
+              Software Engineer
             </h2>
-            <p className="text-slate-500 max-w-sm mx-auto leading-relaxed">
-              I’m currently exploring new opportunities where I can contribute to 
-              <span className="text-slate-900 font-medium"> impactful systems. </span> 
-              If you're looking for a fresh perspective, I'd love to connect.
+          </motion.div>
+
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.2, duration: 0.8 }}
+            className="max-w-xl space-y-6 text-lg sm:text-xl text-slate-600 leading-relaxed font-light"
+          >
+            <p>
+              I build intelligent, agentic systems. From <span className="font-medium text-slate-800">vector-driven knowledge retrieval</span> to automated pipeline orchestration, I turn complex data into actionable logic.
             </p>
-            <div className="pt-4">
-              <a 
-                href="https://www.linkedin.com/in/alexanderlin-com/" 
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-block px-8 py-3 bg-slate-900 text-white rounded-xl font-medium hover:bg-slate-800 transition-all shadow-sm"
-              >
-                Connect on LinkedIn
-              </a>
+
+            {/* Soft, integrated availability blurb */}
+            <div className="px-5 py-4 bg-white/40 backdrop-blur-md rounded-2xl border border-white/60 shadow-[0_8px_30px_rgb(0,0,0,0.04)] text-slate-700 font-medium flex items-start sm:items-center gap-4">
+              <span className="relative flex h-3 w-3 mt-1 sm:mt-0 flex-shrink-0">
+                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
+                <span className="relative inline-flex rounded-full h-3 w-3 bg-emerald-500"></span>
+              </span>
+              <p className="text-base sm:text-lg">
+                Actively exploring full-time employment roles.
+              </p>
             </div>
           </motion.div>
-        </section>
 
-        </section>
+          {/* Premium CTAs */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.3, duration: 0.8 }}
+            className="mt-10 flex flex-col sm:flex-row gap-4 w-full sm:w-auto"
+          >
+            <Link
+              to="/projects"
+              className="group flex items-center justify-center gap-2 px-8 py-4 bg-slate-900 text-white rounded-full font-medium text-lg transition-all duration-300 shadow-xl shadow-slate-900/20 hover:shadow-2xl hover:shadow-indigo-500/30 hover:-translate-y-0.5"
+            >
+              View Projects
+              <svg className="w-5 h-5 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
+            </Link>
+            <Link
+              to="/about"
+              className="flex items-center justify-center px-8 py-4 bg-white/50 backdrop-blur-xl border border-white/80 text-slate-700 rounded-full font-medium text-lg hover:bg-white/80 transition-all duration-300 shadow-sm hover:shadow-md hover:-translate-y-0.5"
+            >
+              About Me
+            </Link>
+          </motion.div>
+        </div>
+
+        {/* RIGHT COLUMN: Frosted Glass Avatar */}
+        <motion.div
+          initial={{ opacity: 0, scale: 0.95 }}
+          animate={{ opacity: 1, scale: 1 }}
+          transition={{ delay: 0.2, duration: 1, ease: "easeOut" }}
+          className="w-full max-w-lg lg:max-w-none mx-auto relative order-1 lg:order-2 flex justify-center lg:justify-end z-20"
+        >
+          {/* The Apple Glass Container */}
+          <div className="relative aspect-square w-full sm:w-4/5 lg:w-full max-w-md rounded-[2.5rem] p-4 bg-white/40 backdrop-blur-2xl border border-white/60 shadow-[0_30px_60px_-15px_rgba(0,0,0,0.1)] group">
+
+            <div className="w-full h-full rounded-[2rem] overflow-hidden relative shadow-inner flex items-center justify-center bg-gradient-to-br from-indigo-50/50 to-sky-50/50">
+              <img
+                src="/pic_of_me.jpg"
+                alt="Alexander Lin"
+                className="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-700 ease-out"
+              />
+            </div>
+
+
+          </div>
+        </motion.div>
+
       </div>
-    </PageLayout>
+    </motion.div>
   );
 }
