@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
+import AssistantChat from "../components/AssistantChat";
 
 export default function Home() {
   return (
@@ -59,33 +60,16 @@ export default function Home() {
             </div>
           </motion.div>
 
-          {/* Primary AI CTA */}
+          {/* Inline Native AI Chat Container */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.3, duration: 0.8 }}
-            className="mt-10 p-6 sm:p-8 bg-white/40 backdrop-blur-xl border border-white/60 rounded-3xl shadow-[0_8px_30px_rgb(0,0,0,0.04)] text-center sm:text-left flex flex-col sm:flex-row items-center justify-between gap-6"
+            className="mt-8 w-full max-w-xl"
           >
-            <div className="space-y-2 flex-1">
-              <h3 className="font-sans text-xl font-bold text-slate-900 tracking-tight">About Me</h3>
-              <p className="text-slate-600 text-sm md:text-base leading-relaxed font-light max-w-lg">
-                I built a custom Retrieval-Augmented Generation (RAG) system trained deeply on my resume, work history, and projects. Feel free to ask it anything about my experience!
-              </p>
-            </div>
-            <a
-              href="https://assistant-resume-frontend.vercel.app/"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="flex-shrink-0 group flex justify-center items-center gap-3 px-8 py-4 bg-gradient-to-r from-indigo-600 to-sky-500 text-white rounded-full font-bold text-lg shadow-[0_8px_30px_rgb(99,102,241,0.3)] hover:shadow-[0_12px_40px_rgb(99,102,241,0.5)] hover:-translate-y-1 transition-all duration-300 w-full sm:w-max relative overflow-hidden"
-            >
-              <span className="relative z-10">Chat Now</span>
-              <svg className="w-5 h-5 relative z-10 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
-              {/* Shine effect */}
-              <div className="absolute inset-0 -translate-x-full group-hover:animate-[shimmer_1.5s_infinite] bg-gradient-to-r from-transparent via-white/20 to-transparent skew-x-12 z-0"></div>
-            </a>
+            <AssistantChat />
           </motion.div>
 
-          {/* Secondary CTAs */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
@@ -126,7 +110,6 @@ export default function Home() {
                 className="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-700 ease-out"
               />
             </div>
-
 
           </div>
         </motion.div>

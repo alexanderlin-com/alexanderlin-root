@@ -9,11 +9,14 @@ type PageLayoutProps = {
 
 export default function PageLayout({ children }: PageLayoutProps) {
   return (
-    <div className="min-h-screen flex flex-col relative overflow-hidden bg-slate-50 font-sans text-slate-900">
-      {/* Apple Glass Mesh Gradients */}
-      <div className="absolute top-[-10%] left-[-10%] w-[50rem] h-[50rem] bg-indigo-300/40 rounded-full blur-[100px] mix-blend-multiply opacity-70 pointer-events-none animate-pulse" style={{ animationDuration: '15s' }}></div>
-      <div className="absolute bottom-[-10%] right-[-5%] w-[60rem] h-[60rem] bg-sky-200/50 rounded-full blur-[120px] mix-blend-multiply opacity-70 pointer-events-none animate-pulse" style={{ animationDuration: '20s' }}></div>
-      <div className="absolute top-[30%] right-[20%] w-[40rem] h-[40rem] bg-rose-200/30 rounded-full blur-[100px] mix-blend-multiply opacity-60 pointer-events-none animate-pulse" style={{ animationDuration: '18s' }}></div>
+    <div className="min-h-screen flex flex-col relative bg-slate-50 font-sans text-slate-900">
+      {/* Apple Glass Mesh Gradients - Contain the overflow on this specific block so it doesn't break sticky pos */}
+      <div className="fixed inset-0 overflow-hidden pointer-events-none z-0">
+        <div className="absolute top-[-10%] left-[-10%] w-[50rem] h-[50rem] bg-indigo-300/40 rounded-full blur-[100px] mix-blend-multiply opacity-70 animate-pulse" style={{ animationDuration: '15s' }}></div>
+        <div className="absolute bottom-[-10%] right-[-5%] w-[60rem] h-[60rem] bg-sky-200/50 rounded-full blur-[120px] mix-blend-multiply opacity-70 animate-pulse" style={{ animationDuration: '20s' }}></div>
+        <div className="absolute top-[30%] right-[20%] w-[40rem] h-[40rem] bg-rose-200/30 rounded-full blur-[100px] mix-blend-multiply opacity-60 animate-pulse" style={{ animationDuration: '18s' }}></div>
+      </div>
+
 
       <div className="relative z-10 flex flex-col min-h-screen">
         <Navbar />
