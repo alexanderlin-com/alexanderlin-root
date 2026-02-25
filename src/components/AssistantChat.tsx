@@ -144,7 +144,7 @@ export default function AssistantChat({ className = "h-[500px] lg:h-[600px]" }: 
                                         : "bg-white border border-slate-100 text-slate-700 rounded-tl-sm shadow-sm"
                                         }`}
                                 >
-                                    <p className="text-sm sm:text-base leading-relaxed whitespace-pre-wrap font-light">
+                                    <p className="text-sm sm:text-base leading-relaxed whitespace-pre-wrap font-light text-left">
                                         {msg.content}
                                     </p>
                                 </div>
