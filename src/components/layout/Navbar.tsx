@@ -23,6 +23,11 @@ export default function Navbar() {
             <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-indigo-600 transition-all group-hover:w-full"></span>
           </Link>
 
+          <Link to="/code" className="text-sm font-medium text-slate-600 hover:text-indigo-600 transition-colors relative group py-2">
+            Code
+            <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-indigo-600 transition-all group-hover:w-full"></span>
+          </Link>
+
           <a
             href="/resume.pdf"
             target="_blank"
